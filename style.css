@@ -1,0 +1,251 @@
+:root {
+    --cup-width: 30vw;
+    --cup-height: 25vw;
+    --cup-handle: 10vw;
+    --cup-border-width: 2vw;
+    --cup-inside-width: calc(var(--cup-width) - var(--cup-border-width));
+    --cup-inside-height: calc(var(--cup-height) - var(--cup-border-width));
+    --border-width: 1vw;
+    --coffee-bottom: 80%;
+    --strong-coffee-bottom: 80%;
+    --steamed-milk-bottom: 0;
+    --milk-foam-bottom: 0;
+    --chocolate-bottom: 0;
+    --cup-color: #fff;
+    --coffee-color: #3c302f;
+    --strong-coffee-color: #2a2525;
+    --milk-foam-color: #fceecb;
+    --steamed-milk-color: #ffd7b3;
+    --chocolate-color: #391e09;
+  }
+  
+  
+  body {
+    background: linear-gradient(-45deg, #F8A38C, #F47052, #F09993, #BE8999, #A83843);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+  /*   background: #d6b9a4; */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: auto;
+    overflow: hidden;
+    z-index: 999999;
+  }
+  
+  @keyframes gradient {
+      0% {
+          background-position: 0% 50%;
+      }
+      50% {
+          background-position: 100% 50%;
+      }
+      100% {
+          background-position: 0% 50%;
+      }
+  }
+  
+  a {
+    position: relative;
+    font-family: Verdana, sans-serif;
+    font-weight: bold;
+    color: #79d7fc;
+  }
+  
+  a::visited {
+    text-decoration: none;
+    color: #79d7fc;
+  }
+  
+  a::hover {
+    text-decoration: none;
+    color: #4991ad;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 70vw;
+    gap: 8vw;
+  }
+  
+  .coffee-type {
+    color: #f1faee;
+    text-align: center;
+    font-size: 4vw;
+  }
+  
+  .cup {
+    position: relative;
+    width: var(--cup-width);
+    height: var(--cup-height);
+  /*   background: #d6b9a4; */
+    border: var(--cup-border-width) solid var(--cup-color);
+    border-top: none;
+    border-radius: 0 0 20vw 20vw;
+  }
+  
+  .cup::before {
+    content: "";
+    position: absolute;
+    top: -3vw;
+    left: -2vw;
+    width: calc(var(--cup-width) * 1.0);
+    height: calc(var(--cup-width) * 0.1);
+  /*   background: #d6b9a4; */
+    border: var(--cup-border-width) solid var(--cup-color);
+    border-radius: 50%;
+    z-index: 99;
+  }
+  
+  .cup::after {
+    content: "";
+    position: absolute;
+    width: var(--cup-handle);
+    height: calc(var(--cup-handle) * 1.5);
+    border: var(--cup-border-width) solid var(--cup-color);
+    left: 30vw;
+    border-radius: 50% 20% 60% 30%;
+    z-index: -1;
+  }
+  
+  .options {
+    display: flex;
+    flex-direction: column;
+    padding-top: 15%;
+    gap: 2vh;
+    justify-content: space-evenly;
+    box-sizing: border-box;
+  }
+  
+  .options button {
+    user-select: none;
+    background: rgba(214, 217, 227, 0.6);
+    font-size: 1rem;
+    border: none;
+    color: #363636;
+    padding: 1vh;
+  /*   box-sizing: border-box; */
+    border-radius: 2vh;
+  }
+  
+  .options button:hover {
+    cursor: pointer;
+    outline: #79d7fc solid 2px;
+    background: rgba(255, 255, 255, 0.6);
+  }
+  
+  .options .selected {
+    outline: #79d7fc solid 2px;
+    background: rgba(255, 255, 255, 0.8);
+  }
+  
+  .filling {
+    position: absolute;
+    top: calc(var(--cup-border-width)/50);
+    width: var(--cup-width);
+    height: var(--cup-height);
+    overflow: hidden;
+    border-radius: 0 0 18vw 18vw;
+    background-color: var(--main-bg-color);
+    bottom: 1vw;
+  }
+  
+  .filling div {
+    position: absolute;
+    width: 100%;
+    transition: all 1s linear;
+    color: #817f75;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+  /*   height: 0; */
+  /*   overflow: hidden; */
+    font-size: 3vw;
+    height: 80%;
+    bottom: -100%;
+    box-sizing: border-box;
+  }
+  
+  .filling.reset.cappuccino {
+    --coffee-bottom: -55%;
+    --steamed-milk-bottom: -30%;
+    --milk-foam-bottom: 0;
+  }
+  
+  .filling.reset.flat-white {
+    --coffee-bottom: -55%;
+    --steamed-milk-bottom: 0;
+  }
+  
+  .filling.reset.espresso {
+    --coffee-bottom: -55%;
+  }
+  
+  .filling.reset.latte {
+    --coffee-bottom: -55%;
+    --steamed-milk-bottom: -20%;
+    --milk-foam-bottom: 0%;
+  }
+  
+  .filling.reset.long-black {
+    --coffee-bottom: 0%;
+  }
+  
+  .filling.reset.piccolo {
+    --coffee-bottom: -62%;
+    --milk-foam-bottom: -30%;
+  }
+  
+  .filling.reset.mocha {
+    --coffee-bottom: -55%;
+    --chocolate-bottom: -35%;
+    --steamed-milk-bottom: 0%;
+  }
+  
+  .filling.reset.ristretto {
+    --strong-coffee-bottom: -62%;
+  }
+  
+  div.coffee {
+    background: var(--coffee-color);
+    bottom: var(--coffee-bottom);
+  /*   line-height: 4vw; */
+    z-index: 5;
+  }
+  
+  div.milk {
+    background: var(--milk-color);
+    bottom: var(--milk-bottom);
+    z-index: 1;
+  }
+  
+  div.milk-foam {
+    background: var(--milk-foam-color);
+    bottom: var(--milk-foam-bottom);
+    z-index: 2;
+  }
+  
+  div.steamed-milk {
+    background: var(--steamed-milk-color);
+    bottom: var(--steamed-milk-bottom);
+    z-index: 3;
+    border-bottom-radius: 10vw;
+  }
+  
+  div.chocolate {
+    background: var(--chocolate-color);
+    bottom: var(--chocolate-bottom);
+    z-index: 4;
+    border-bottom-radius: 20vw;
+  }
+  
+  .filling.reset {
+    --coffee-bottom: -100%;
+    --milk-bottom: -100%;
+    --steamed-milk-bottom: -100%;
+    --milk-foam-bottom: -100%;
+    --chocolate-bottom: -100%;
+  }
