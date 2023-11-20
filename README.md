@@ -4,7 +4,7 @@
 ### Build with HTML, CSS and JS, with CSS doing most of the heavy lifting
 
 ## Deployed at:
-[Coffee Chart](https://coffee-chart.netlify.app/)
+[Coffee Chart](https://seecoffee.netlify.app/)
 
 ## Installation and Run project:
 
