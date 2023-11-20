@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+
 :root {
     --cup-width: 30vw;
     --cup-height: 25vw;
@@ -12,8 +14,8 @@
     --milk-foam-bottom: 0;
     --chocolate-bottom: 0;
     --cup-color: #fff;
-    --coffee-color: #3c302f;
-    --strong-coffee-color: #2a2525;
+    --coffee-color: #563f3d;
+    --strong-coffee-color: #292222;
     --milk-foam-color: #fceecb;
     --steamed-milk-color: #ffd7b3;
     --chocolate-color: #391e09;
@@ -25,6 +27,8 @@
     background-size: 400% 400%;
     animation: gradient 15s ease infinite;
   /*   background: #d6b9a4; */
+    font-family: Poppins, Verdana, sans-serif;
+    font-weight: bold;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -47,10 +51,10 @@
   
   a {
     position: relative;
-    font-family: Verdana, sans-serif;
-    font-weight: bold;
     text-decoration: none;
+    font-size: 1.5rem;
     color: #79d7fc;
+    gap: -10vw;
   }
   
   a:visited {
@@ -69,7 +73,7 @@
     align-items: center;
     justify-content: center;
     width: 70vw;
-    gap: 5vw;
+    gap: 4vw;
   }
   
   .coffee-type {
@@ -164,7 +168,7 @@
     justify-content: center;
   /*   height: 0; */
   /*   overflow: hidden; */
-    font-size: 3vw;
+    font-size: 2vw;
     height: 80%;
     bottom: -100%;
     box-sizing: border-box;
@@ -219,6 +223,7 @@
   div.strong-coffee {
     background: var(--strong-coffee-color);
     bottom: var(--strong-coffee-bottom);
+    font-size: 1.5vw;
     z-index: 6;
   }
   
