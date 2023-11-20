@@ -29,7 +29,6 @@
     font-family: Poppins, Verdana, sans-serif;
     font-weight: bold;
     display: flex;
-    padding-top: 10vw;;
     justify-content: space-evenly;
     align-items: center;
     margin: auto;
@@ -54,7 +53,7 @@
     text-decoration: none;
     font-size: 1.5rem;
     color: #79d7fc;
-    top: 45vh;
+    top: 50vh;
     right: 55dvw;
   }
   
@@ -265,6 +264,7 @@
     body{
       flex-direction: column;
       gap: 10dvw;
+      padding-top: 10vw;
     }
 
     a{
