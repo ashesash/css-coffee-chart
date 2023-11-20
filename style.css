@@ -24,7 +24,7 @@
   
   body {
     background: linear-gradient(-45deg, #F8A38C, #F47052, #F09993, #BE8999, #A83843);
-    background-size: 400% 400%;
+    background-size:500% 500%;
     animation: gradient 15s ease infinite;
     font-family: Poppins, Verdana, sans-serif;
     font-weight: bold;
@@ -50,12 +50,12 @@
   }
   
   a {
-    position: fixed;
+    position: relative;
     text-decoration: none;
     font-size: 1.5rem;
     color: #79d7fc;
-    top: 90vh;
-    left: 34dvw;
+    top: 45vh;
+    right: 55dvw;
   }
   
   a:visited {
@@ -133,7 +133,7 @@
     border: none;
     color: #363636;
     padding: 1vh;
-  /*   box-sizing: border-box; */
+    box-sizing: border-box;
     border-radius: 2vh;
   }
   
@@ -269,8 +269,9 @@
 
     a{
       font-size: 1rem;
-      position: fixed;
-      left: 31dvw;
+      position: relative;
+      left: 3dvw;
+      top: 5dvw;
     }
 
     .cup {
@@ -295,8 +296,11 @@
     .options {
       display: flex;
       flex-wrap:wrap;
+      flex-direction: column;
       justify-content: space-evenly;
       box-sizing: border-box;
+      width: calc(var(--cup-width) * 2);
+      height: calc(var(--cup-width) * 2);
     }
 
     .filling {
